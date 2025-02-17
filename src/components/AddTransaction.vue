@@ -36,9 +36,21 @@ const createTransaction = () => {
     class="fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0">
     <div
       class="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-zinc-200 bg-white p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg dark:border-zinc-800 dark:bg-zinc-950 sm:max-w-[425px]">
-      <h2 class="text-lg font-semibold leading-none tracking-tight text-zinc-900 dark:text-zinc-50">
-        Add Transaction
-      </h2>
+      <div class="relative">
+        <button @click="emit('closeModal')"
+          class="absolute top-2 end-2 p-2 rounded-full transition-colors dark:text-zinc-50 text-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-x">
+            <path d="M6 6 18 18M6 18 18 6"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="relative">
+        <h2 class="text-lg font-semibold leading-none tracking-tight text-zinc-900 dark:text-zinc-50">
+          Add Transaction
+        </h2>
+      </div>
       <p class="text-sm text-zinc-500 dark:text-zinc-400">
         You can add transaction via here. Click save button when you are done.
       </p>

@@ -19,6 +19,9 @@ const searchTerm = ref('');
 
 const tableBodyChanges = ref(false)
 
+const closeModal = () => {
+  showModal.value = false
+}
 
 const transactionDialog = (val: any) => {
   showModal.value = val.showModal
@@ -104,5 +107,5 @@ const transactionDialog = (val: any) => {
       <DataTable :search-term="searchTerm" :status-selected="statusSelected" :tableBodyChanges="tableBodyChanges" />
     </section>
   </section>
-  <AddTransaction :isShow="showModal" @transactionDialog="transactionDialog" />
+  <AddTransaction :isShow="showModal" @transactionDialog="transactionDialog" @closeModal="closeModal" />
 </template>
